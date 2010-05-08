@@ -98,7 +98,9 @@ Script: Overlay.js
 			
 			destroy: function () {
 			
-				['container', 'overlay', 'iframe'].each(function (k) { if(this[k]) this[k].destroy() }.bind(this));
+				this.iframe.destroy();
+				this.overlay.destroy();
+				this.container.destroy();
 				return this
 			},
 			toElement: function () {
@@ -149,21 +151,12 @@ Script: Overlay.js
 						modal: false, 
 						dialog: false,
 						*/
-						shadow: true, 
-						color: "#0F0F0F", zIndex: 1,opacity: .4, duration: 250,
-						fx: {link: 'chain', duration: 300}
+						color: "#0F0F0F", zIndex: 1,opacity: .4, duration: 250
 					},
 		
 		_get = function (options, name) {
 		
-				if(options || !this.retrieve(name)) {
-				
-					var _old = this.retrieve(name);
-					
-					if(_old && this.retrieve('o:' + name)) _old.fireEvent('hide').destroy();
-				
-					this.set(name, options)
-				}
+				if(options || !this.retrieve(name)) this.erase(name).set(name, options);
 				
 				return this.retrieve(name)
 				
@@ -185,10 +178,9 @@ Script: Overlay.js
 				if(!options.modal) options.onClick = function () { this.retrieve(_expose).hide() }.bind(this);
 								
 				var parent = this.getParent(),
-					mask,
 					prop = ['z-index', 'position'];
 										
-				return this.store(_expose, new Overlay(options).addEvents({onShow: function () {
+				return this.erase(_expose).store(_expose, new Overlay(options).addEvents({onShow: function () {
 				
 						this.store('o:' + _expose, true).setStyles({
 							
@@ -217,9 +209,9 @@ Script: Overlay.js
 							})
 						}.bind(this));
 						
-						mask = new Overlay({
+						parent.erase(_mask).get(_mask, {
 								modal: true, 
-								container: parent,
+								container: parent.erase('mask'),
 								zIndex: options.zIndex,
 								opacity: options.opacity,
 								onClick: function () {
@@ -236,18 +228,27 @@ Script: Overlay.js
 						this.eliminate('o:' + _expose).getParents(':not(body):not(html)').each(function (el) { el.setStyles(el.retrieve('props')).eliminate('props') });
 						
 						//
-						parent.getChildren().each(function (el) {
+						parent.erase(_mask).getChildren().each(function (el) {
 						
 							el.setStyles(el.retrieve('props')).eliminate('props')
 						});
 						
-						mask.destroy()
 					}.bind(this)
 				}))				
 			},
 			get: function (options) {
 			
 				return _get.apply(this, [options, _expose])
+			},
+			erase: function () {
+		
+				if(this.retrieve(_expose)) {
+				
+					this.retrieve(_expose).destroy();
+					this.eliminate(_expose)
+				}
+				
+				return this
 			}
 		}
 		
@@ -264,7 +265,7 @@ Script: Overlay.js
 					
 				}.bind(this);
 									
-				return this.store(_mask, new Overlay(options).addEvents({
+				return this.erase(_mask).store(_mask, new Overlay(options).addEvents({
 				
 					onShow: function () {
 					
@@ -279,6 +280,16 @@ Script: Overlay.js
 			get: function (options) {
 			
 				return _get.apply(this, [options, _mask])
+			},
+			erase: function () {
+		
+				if(this.retrieve(_mask)) {
+				
+					this.retrieve(_mask).destroy();
+					this.eliminate(_mask)
+				}
+				
+				return this				
 			}
 		}
 		

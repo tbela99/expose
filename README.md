@@ -5,8 +5,8 @@ A modified version of Samuel Birch overlay, that Extends Element.Properties with
 
 #### Demos
 
-- [Expose](http://tbela99.github.com/tab/Demos/matrix.html)
-- [Matrix](http://tbela99.github.com/tab/Demos/matrix.html)
+- [Expose](http://tbela99.github.com/expose/Demo/expose.html)
+- [Mask](http://tbela99.github.com/expose/Demo/index.html)
 
 
 ### Options: {#overlay-options}
@@ -55,7 +55,7 @@ Element Properties
 
 #### Expose
 
-produce a jQuery like Exposé in mootools.
+produce a jQuery like ExposÃ© in mootools.
 
 #### Syntax
 
