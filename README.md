@@ -53,34 +53,6 @@ hide the overlay.
 Element Properties
 ============
 
-#### Mask
-
-show an overlay on top of the element.
-
-#### Syntax
-
-	element.set('mask' [, options]);
-	element.get('mask' [, options]);
-
-#### Options
-
-see [Overlay Options](#overlay-options).
-
-How to use
----------------------
-
-
-	element.set('mask', {
-	
-		onShow: function () {
-		
-		},
-		onHide: function () {
-		
-		}
-	}).show();
-	element.get('mask').hide();
-
 #### Expose
 
 produce a jQuery like Exposé in mootools.
@@ -111,3 +83,31 @@ How to use
 		}
 	}).show();
 	element.get('expose').hide();
+
+#### Mask
+
+show an overlay on top of the element.
+
+#### Syntax
+
+	element.set('mask' [, options]);
+	element.get('mask' [, options]);
+
+#### Options
+
+see [Overlay Options](#overlay-options).
+
+How to use
+---------------------
+
+
+	element.set('mask', {
+	
+		onShow: function () {
+		
+		},
+		onHide: function () {
+		
+		}
+	}).show();
+	element.get('mask').hide();
