@@ -56,6 +56,8 @@ Element Properties
 How to use
 ---------------------
 
+two properties are avaialable: expose and mask
+
 #### Expose
 
 produce a jQuery like Exposé in mootools.
