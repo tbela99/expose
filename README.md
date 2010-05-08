@@ -65,6 +65,7 @@ produce a jQuery like Exposé in mootools.
 #### Options
 
 In addition to the [Overlay Options](#overlay-options)
+
 * modal  - (*boolean*) if false, the overlay will be hidden the the user click on it.
 * dialog  - (*boolean*, optional) the overlay will appear on top of another overlay with the same zIndex.
 
