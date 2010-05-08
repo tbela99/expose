@@ -53,6 +53,9 @@ hide the overlay.
 Element Properties
 ============
 
+How to use
+---------------------
+
 #### Expose
 
 produce a jQuery like Exposé in mootools.
@@ -68,9 +71,6 @@ In addition to the [Overlay Options](#overlay-options)
 
 * modal  - (*boolean*) if false, the overlay will be hidden the the user click on it.
 * dialog  - (*boolean*, optional) the overlay will appear on top of another overlay with the same zIndex.
-
-How to use
----------------------
 
 ### Javascript:
 
@@ -97,9 +97,6 @@ show an overlay on top of the element.
 #### Options
 
 see [Overlay Options](#overlay-options).
-
-How to use
----------------------
 
 ### Javascript:
 
