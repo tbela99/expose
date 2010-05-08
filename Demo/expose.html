@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<style type="text/css">
+
+body {
+
+	padding: 0;
+	margin: 0
+}
+div.auto, div.auto2, div.auto3 {
+
+	width: 200px;
+	min-height: 50px;
+	margin: 20px auto;
+	background: #fff;
+}
+
+div.dialog {
+
+	color: #aab0cc;
+	font-weight: bold
+}
+
+
+</style>
+<script type="text/javascript" src="../mootools.js"></script>
+<script type="text/javascript" src="../Source/Overlay.js"></script>
+<script type="text/javascript">
+
+		window.addEvent('domready', function () { 
+			
+			document.getElements('input[type=text]').addEvents(
+				{
+					focus: function () {
+			
+						this.get('expose').show()
+					},
+					blur: function () {
+			
+						this.get('expose').hide()
+					}
+				})
+		});
+</script>
+</head><body>
+<div style="margin: 100px auto; width:300px">
+  <form action="" method="get">
+    <input size="20" type="text" />
+    <input size="20" type="text" />
+    <input value="OK" type="button" />
+  </form>
+  
+  <div>Content for New Div Tag Goes Here</div>
+</div>
+</body></html>
