@@ -53,10 +53,33 @@ hide the overlay.
 Element Properties
 ============
 
+#### Mask
+
+show an overlay on top of the element.
+
+#### Syntax
+
+	element.set('mask' [, options]);
+	element.get('mask' [, options]);
+
+#### Options
+
+see [Overlay Options](#overlay-options).
+
 How to use
 ---------------------
 
-two properties are avaialable: expose and mask
+
+	element.set('mask', {
+	
+		onShow: function () {
+		
+		},
+		onHide: function () {
+		
+		}
+	}).show();
+	element.get('mask').hide();
 
 #### Expose
 
@@ -74,7 +97,9 @@ In addition to the [Overlay Options](#overlay-options)
 * modal  - (*boolean*) if false, the overlay will be hidden the the user click on it.
 * dialog  - (*boolean*, optional) the overlay will appear on top of another overlay with the same zIndex.
 
-### Javascript:
+How to use
+---------------------
+
 
 	element.set('expose', {
 	
@@ -86,29 +111,3 @@ In addition to the [Overlay Options](#overlay-options)
 		}
 	}).show();
 	element.get('expose').hide();
-
-#### Mask
-
-show an overlay on top of the element.
-
-#### Syntax
-
-	element.set('mask' [, options]);
-	element.get('mask' [, options]);
-
-#### Options
-
-see [Overlay Options](#overlay-options).
-
-### Javascript:
-
-	element.set('mask', {
-	
-		onShow: function () {
-		
-		},
-		onHide: function () {
-		
-		}
-	}).show();
-	element.get('mask').hide();
