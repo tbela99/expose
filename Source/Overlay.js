@@ -1,20 +1,21 @@
-
 /*
-Script: Overlay.js
-	Covers the window with a semi-transparent layer.
+---
+script: Overlay.js
+license: MIT-style license.
+description: A modified version of Samuel Birch overlay, that Extends Element.Properties with mask and expose.
+copyright: Copyright (c) 2008 Thierry Bela
+authors: [Thierry Bela]
 
-	License: MIT-style license.
-	Copyright: Copyright (c) 2007 Thierry bela <bntfr at yahoo dot fr>
-	Original by Samuel birch
-
-	License:
-		MIT-style license.
-
-	Authors:
-		Thierry Bela
-	Version:
-		1.2.1
-
+requires: 
+  core:1.2.3: 
+  - Class.Extras
+  - Element.Event
+  - Element.Style
+  - Element.Dimensions
+  - Fx.Morph
+  - Fx.Tween
+provides: [Overlay]
+...
 */
 
 	(function ($) {
